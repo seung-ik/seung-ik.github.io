@@ -1,4 +1,7 @@
 import type { NextPage } from "next";
+import { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { socketState, useSocket } from "src/state/socketState";
 import styled from "styled-components";
 
 const Wrapper = styled('div')`
@@ -8,6 +11,16 @@ const Wrapper = styled('div')`
 `
 
 const Home: NextPage = () => {
+  const socket = useRecoilValue(socketState).socket;
+  const { connectSocket } = useSocket();
+
+  useEffect(() => {
+    console.log(socket);
+    if(!socket){
+      console.log('1')
+      connectSocket();
+    }
+  }, []);
   return <Wrapper>asd</Wrapper>;
 };
 
