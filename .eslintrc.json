@@ -1,0 +1,74 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "extends": [
+        "next",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "tsx": true
+        }
+    },
+    "ignorePatterns": [
+        "node_modules/",
+        ".next/*"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".ts",
+                    ".tsx"
+                ]
+            },
+            "typescript": {
+                "alwaysTryTypes": true
+            }
+        }
+    },
+    "rules": {
+        "react/react-in-jsx-scope": 0,
+        "react/prefer-stateless-function": 0,
+        "react/jsx-filename-extension": 0,
+        "react/jsx-one-expression-per-line": 0,
+        "react/no-unescaped-entities": "off",
+        "@next/next/no-page-custom-font": "off",
+        "no-nested-ternary": 0,
+        "no-unused-vars": 1,
+        "no-undef": "off",
+        "/no-useless-escape": "off",
+        "indent": [
+            "error",
+            2
+        ],
+        "@typescript-eslint/no-empty-interface": "off",
+        "no-empty-interface": "off"
+    },
+    "overrides": [
+        {
+            "files": [
+                "*.js",
+                "*.jsx"
+            ],
+            "rules": {
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/no-unused-vars": "off",
+                "@typescript-eslint/no-empty-interface": "off"
+            }
+        }
+    ]
+}
