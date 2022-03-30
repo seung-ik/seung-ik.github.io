@@ -1,3 +1,4 @@
+import axios from "axios";
 import type { NextPage } from "next";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
@@ -15,7 +16,6 @@ const Home: NextPage = () => {
   const { connectSocket } = useSocket();
 
   useEffect(() => {
-    console.log(socket);
     if(!socket){
       console.log('1')
       connectSocket();
