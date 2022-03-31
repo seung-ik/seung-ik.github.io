@@ -10,19 +10,19 @@ export const socketState = atom<SocketState>({
 });
 
 
-export async function useSocket (){
+export function useSocket (){
   const [socket, setSocket] = useRecoilState(socketState);
 
-  try{
-    const data = await axios.get('https://api.bithumb.com/public/orderbook/ALL_KRW');
-    console.log(data);
-  }catch{
-    console.log('tkqkf')
-  }
+  // try{
+  //   const data = await axios.get('https://api.bithumb.com/public/orderbook/ALL_KRW');
+  //   console.log(data);
+  // }catch{
+  //   console.log('tkqkf')
+  // }
   const connectSocket = () => {
+
     const websocket = new WebSocket('wss://pubwss.bithumb.com/pub/ws');
     websocket.onopen = () => {
-      console.log(3)
       setSocket({ socket: websocket });
       // websocket.send(
       //   JSON.stringify({

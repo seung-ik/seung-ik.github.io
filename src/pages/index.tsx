@@ -21,6 +21,7 @@ const Home: NextPage = () => {
       connectSocket();
     }
   }, []);
+  
   return <Wrapper>asd</Wrapper>;
 };
 

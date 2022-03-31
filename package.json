@@ -2,11 +2,14 @@
   "name": "next-recoil",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://seung-ik.github.io/tradepr",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next build && HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "next build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
@@ -37,6 +40,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.6.1",
     "typescript": "4.6.3"
   }
