@@ -1,8 +1,10 @@
-const isProd = process.env.NODE_ENV === 'production'
-
-module.exports = {
-  // Use the CDN in production and localhost for development.
-  assetPrefix: isProd
-    ? "https://cdn.statically.io/gh/NaveenDA/seung-ik.github.io/tradepr/"
-    : "",
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    loader: "akamai",
+    path: "/",
+  },
 };
+
+module.exports = nextConfig
